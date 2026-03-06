@@ -2,6 +2,11 @@ import React from 'react'
 import { Star } from "lucide-react";
 
 export default function Products({ product }) {
+
+  const addToCart = (productName) => {
+    console.log(productName, "is added th the cart")
+    alert(productName + " is added th the cart")
+  }
   return (
     <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition">
 
@@ -34,7 +39,8 @@ export default function Products({ product }) {
           ${product.price}
         </p>
 
-        <button className="mt-3 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">
+        <button className="mt-3 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
+        onClick={() => addToCart(product.name)}>
           Add to Cart
         </button>
       </div>
